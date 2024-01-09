@@ -19,14 +19,16 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- קובץ JS  -->
+    <script src="js/main.js" ></script>
 </head>
 
 
 <body id="page-top" class=" overflow-hidden m-auto">    
     <!-- Masthead-->
-    <header class="masthead bg-primary text-white text-center " >
+    <header id="header" class="masthead bg-primary text-white text-center d-none " >
         <div class="row  d-flex  align-items-center justify-content-around" >
             <div class="col-2 icons">
                 <img src="assets/logo.png" style="height: 30px; width: auto;" >
@@ -36,14 +38,14 @@
 טריוויה צהלית - פיקוד העורף
                 </p>
             </div>
-            <div class="col-2 icons">
+            <div class="col-2 icons" onclick="startOver()">
                 <i class="bi bi-house-fill" alt="חזרה לעמוד הבית"  style="font-size: 1.5rem;"></i>
             </div>
         </div>
         </header>
 
     <!-- מסך פתיחה-->
-    <section id="openScreen" style="margin-top: 0;" class="d-none" >
+    <section id="openScreen" style="margin-top: 1rem;"  >
     <section class="row d-flex align-items-center justify-content-center" >
         <img src="assets/logo.png" class="col col-12 logo-img" >
         <h1 class="col col-12">טריוויה צהלית - פיקוד העורף</h1>
@@ -61,7 +63,7 @@
     <!-- חלק כפתור -->
     <section>
         <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn  btn-lg  castume-button " type="button">קדימה!</button>
+            <button class="btn  btn-lg  castume-button " type="button" onclick="startGame()">קדימה!</button>
         </div>
 
     </section>
@@ -70,19 +72,45 @@
 
 
     <!-- מסך שאלה -->
-    <section id="qustionScreen"  >
+    <section id="qustionScreen" class="d-none" >
         <section >
-            <h2>פה תהייה השאלה - ואולי קצת יותר ארוכה ועוד טיפה ועוד קצת , טוב הגזמנו?</h2>            
+            <h2 id="Qustion">פה תהייה השאלה - ואולי קצת יותר ארוכה ועוד טיפה ועוד קצת , טוב הגזמנו?</h2>            
         </section>
-        <section>
-            <ol>
+        <section id="AnsList">
+            <ol >
                 <li class="castume-button corectAns">מסיח 1</li>
-                <li class="castume-button">מסיח 2 גם זה אחד ארוך ארוך ארוך ארוך ארוך ארוך</li>
+                <li class="castume-button highlight">מסיח 2 גם זה אחד ארוך ארוך ארוך ארוך ארוך ארוך</li>
                 <li class="castume-button worngAns">מסיח 3</li>
                 <li class="castume-button">מסיח 4 זה אחד ארוך ארוך ארוך ארוך ארוך טוב דיי מוגזם</li>
             </ol>
         </section>
+        <section>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn  btn-lg  castume-button " type="button" onclick="endGame()">בדיקה</button>
+            </div>
+    
+        </section>
     </section>
+
+    <!-- מסך סיכום -->
+    <section id="endScreen" class="d-none"  >
+        <section style="width: 90%; height: 150px;">
+            <p>פה איזור עגול של ניקוד</p>          
+        </section>
+        <section id="mainText" >
+            <p>פה טקסט מסכם יחסית ארוך - 
+            </br>
+            קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. הועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף. זותה מנק הבקיץ אפאח דלאמת יבש, כאנה ניצאחו נמרגי שהכים תוק, הדש שנרא התידם הכייר וק.
+            </p>
+        </section>
+        <section>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn  btn-lg  castume-button " type="button" >צפו בסרטון</button>
+            </div>
+     
+        </section>
+    </section>
+
 
     <!-- Footer-->
     <div class="footer text-center align-items-center justify-content-center">
@@ -100,6 +128,7 @@
     <!-- Core theme JS-->
     <!-- <script src="js/scripts.js"></script> -->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+   
 </body>
 
 </html>

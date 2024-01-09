@@ -103,7 +103,10 @@ h2 {
     display: block !important;
 }
 
-
+#endScreen #mainText{
+    padding: 1rem;
+    text-align: right; 
+}
 
 
 
@@ -175,6 +178,17 @@ h2 {
     border: 1px solid #870e07 !important;
 }
 
+.highlight{
+    border: 2px solid #fcff46 !important;
+    border-radius: 7px;
+}
+
+.highlight:active{
+    border: 2px solid #fcff46;
+    border-radius: 7px;
+}
+
+
 
 @media all and (max-width:30em) {
     .castume-button {
@@ -234,6 +248,11 @@ h2 {
     .worngAns{
         border: 1px solid #870e07 !important;
     }
+    .highlight{
+        border: 2px solid #fcff46 !important;
+        border-radius: 7px;
+    }
+
     .footer {        
         padding: 0.2rem;        
         font-size: 0.1rem; 
@@ -290,5 +309,11 @@ h2 {
     .worngAns{
         border: 1px solid #870e07 !important;
     }
+    .highlight{
+        border: 2px solid #fcff46 !important;
+        border-radius: 7px;
+    }
+    
+  
 }
 
