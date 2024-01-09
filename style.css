@@ -1,0 +1,294 @@
+:root {
+    direction: rtl;
+    --text-dark: #000;
+    --text-light: #fff;
+    --theme-main-color: #fd7e14;
+    --theme-main-color-dark: #bd5e10;
+    --theme-main-color-light: #fe9b4a;
+    --theme-secend-color: #017bd0;
+    --theme-secend-color-dark: #065994;
+    --theme-secend-color-light: #2097eb;
+    --font-famlily: 'Assistant', sans-serif;
+}
+
+main,
+body,
+html {
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    margin: auto;
+    background-color: var(--theme-main-color);
+    /* padding: 0.5rem;
+    padding-top: 1rem; */
+    font-family: var(--font-famlily);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-align: center;
+    -webkit-text-size-adjust: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+
+section {
+    margin-top: 2rem;
+}
+
+h1,
+h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.footer {
+    margin: auto;
+    padding: 0.7rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme-secend-color);
+    color: var(--text-light);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-family: var(--font-famlily);
+    font-size: 0.7rem;
+    font-weight: 200;
+
+}
+
+
+.masthead {
+    margin: auto;
+    padding: 0.7rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme-secend-color);
+    color: var(--text-light);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-family: var(--font-famlily);
+    font-size: 0.7rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+    position: sticky;
+}
+.masthead .icons{
+    height: 30px;
+    width: auto;
+    font-size: 1rem;
+}
+
+
+#qustionScreen{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 0;
+}
+#qustionScreen ol li {
+    margin: 0.5rem;
+    font-size: 1rem;
+    text-align: right;
+    font-weight: 400;
+    letter-spacing: normal;
+    display: block !important;
+}
+
+
+
+
+
+
+
+/* כפתורים */
+.castume-button {
+    display: inline-block;
+    padding: 0.5em 1.4em;
+    /* margin: 0 0.3em 0.3em 0; */
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: var(--font-famlily);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--text-light) !important;
+    letter-spacing: 0.2em;
+    background-color: var(--theme-secend-color) !important;
+    border: 1px solid var(--theme-secend-color-dark) !important;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    text-align: center;
+    position: relative;    
+}
+
+
+.castume-button:active {
+    top: 0.1em;
+    color: var(--text-light) !important;
+    background-color: var(--theme-secend-color) !important;
+    border: 1px solid var(--theme-secend-color-dark) !important;
+}
+
+
+.castume-secendery-button {
+    background-color: transparent !important;
+    border: 1px solid var(--theme-main-color-dark) !important;
+    color: var(--text-dark) !important;
+    letter-spacing: normal;
+}
+
+.castume-secendery-button:active {
+    top: 0.1em;
+    color: var(--text-dark) !important;
+    background-color: transparent !important;
+    border: 1px solid var(--theme-main-color-dark) !important;
+}
+
+
+
+/* חיווי מענה */
+.corectAns{
+    background-color: #076a07 !important;
+    border: 1px solid #054705 !important;
+}
+
+.corectAns:active {    
+    background-color: #076a07 !important;
+    border: 1px solid #054705 !important;
+}
+
+.worngAns{
+    background-color: #bd120a !important;
+    border: 1px solid #870e07 !important;
+}
+
+.worngAns:active {    
+    background-color: #bd120a !important;
+    border: 1px solid #870e07 !important;
+}
+
+
+@media all and (max-width:30em) {
+    .castume-button {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .castume-button {
+        transition: transform .2s;
+    }
+
+    .castume-button:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* שונות */
+.logo-img {
+    width: 35%;
+    height: auto;
+    background-color: var(--theme-secend-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+
+
+/* תיקוים למסך מחשב קטן */
+@media only screen and (min-width: 1115px) {
+    #openScreen , #qustionScreen{
+        width: 80%;
+        margin: auto;
+        font-size: 1.3rem;
+    }
+
+    h1,
+    h2 {
+        font-size: 3rem;
+    }
+
+    .logo-img {
+        width: 15%;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+
+    }
+    .castume-button {        
+        border: 1px solid var(--theme-secend-color-dark) !important;
+        box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);        
+    }
+    .corectAns{        
+        border: 1px solid #054705 !important;
+    }
+    .worngAns{
+        border: 1px solid #870e07 !important;
+    }
+    .footer {        
+        padding: 0.2rem;        
+        font-size: 0.1rem; 
+    
+    }
+    section {
+        margin-top: 1rem;
+    }
+
+    #qustionScreen{
+        margin-top: 2rem;
+    }
+
+    #qustionScreen ol li {
+        margin: 0.7rem;
+        font-size: 1.3rem;       
+    }
+}
+
+/* תיקוים למסך מחשב גדול */
+@media only screen and (min-width: 1920px) {
+    #openScreen , #qustionScreen{
+        width: 60%;
+        margin: auto;
+        font-size: 1.3rem;
+    }
+    section {
+        margin-top: 2rem;
+    }
+
+    h1,
+    h2 {
+        font-size: 2rem;
+    }
+
+    .logo-img {
+        width: 25%;
+        margin-bottom: 1.3rem;
+        margin-top: 1.5rem;
+
+    }
+
+    #qustionScreen ol li {
+        margin: 1rem;
+        font-size: 1.5rem;       
+    }
+    .castume-button {        
+        border: 1px solid var(--theme-secend-color-dark) !important;
+        box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);        
+    }
+    .corectAns{        
+        border: 1px solid #054705 !important;
+    }
+    .worngAns{
+        border: 1px solid #870e07 !important;
+    }
+}
+
