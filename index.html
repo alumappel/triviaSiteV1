@@ -78,15 +78,15 @@
         </section>
         <section id="AnsList">
             <ol >
-                <li class="castume-button corectAns">מסיח 1</li>
-                <li class="castume-button highlight">מסיח 2 גם זה אחד ארוך ארוך ארוך ארוך ארוך ארוך</li>
-                <li class="castume-button worngAns">מסיח 3</li>
-                <li class="castume-button">מסיח 4 זה אחד ארוך ארוך ארוך ארוך ארוך טוב דיי מוגזם</li>
+                <li id="A1" class="castume-button corectAns" onclick="selectAns(A1)">מסיח 1</li>
+                <li id="A2" class="castume-button highlight" onclick="selectAns(A2)">מסיח 2 גם זה אחד ארוך ארוך ארוך ארוך ארוך ארוך</li>
+                <li id="A3" class="castume-button worngAns" onclick="selectAns(A3)">מסיח 3</li>
+                <li id="A4" class="castume-button" onclick="selectAns(A4)">מסיח 4 זה אחד ארוך ארוך ארוך ארוך ארוך טוב דיי מוגזם</li>
             </ol>
         </section>
         <section>
             <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn  btn-lg  castume-button " type="button" onclick="endGame()">בדיקה</button>
+                <button class="btn  btn-lg  castume-button " type="button" onclick="submit()">בדיקה</button>
             </div>
     
         </section>

@@ -1,5 +1,6 @@
 let Qnum = 0;
 let gameArry;
+let selectedAns;
 
 function startGame() {
   // שינוי נראות של המסך
@@ -43,7 +44,7 @@ function importData() {
     .then((response) => response.json()) // מנתח את התגובה ל-JSON
     .then((data) => {
       let importData = data; // מקצה את הנתונים למשתנה
-    //   console.log(importData); // מציג את הנתונים בקונסולה
+      //   console.log(importData); // מציג את הנתונים בקונסולה
       let startNum = Math.floor(Math.random() * (importData.length - 5));
       gameArry = importData.slice(startNum, startNum + 5); // מחתך חמש שאלות מהמערך
       //   console.log(gameArry); // מציג את השאלות בקונסולה
@@ -58,22 +59,22 @@ function creatQ() {
   // יצירת מערך מסיחים
   let ansArry = gameArry[Qnum].additional_answers.split(",");
   ansArry.push((innerHTML = gameArry[Qnum].correct_answer));
-//   console.log(ansArry);
+  //   console.log(ansArry);
   let shuffledAnsArry = ansArry
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
-//   console.log(shuffledAnsArry);
+  //   console.log(shuffledAnsArry);
 
   let ansList = document.getElementById("AnsList"); // get the ol element
 
   ansList.innerHTML = ""; // clear any existing content
   if (shuffledAnsArry.length == 4) {
     const myHtml = ` <ol >
-    <li class="castume-button ">${shuffledAnsArry[0]}</li>
-    <li class="castume-button ">${shuffledAnsArry[1]}</li>
-    <li class="castume-button ">${shuffledAnsArry[2]}</li>
-    <li class="castume-button">${shuffledAnsArry[3]}</li>
+    <li id="A1" class="castume-button" onclick="selectAns(A1)">${shuffledAnsArry[0]}</li>
+    <li id="A2" class="castume-button" onclick="selectAns(A2)">${shuffledAnsArry[1]}</li>
+    <li id="A3" class="castume-button" onclick="selectAns(A3)">${shuffledAnsArry[2]}</li>
+    <li id="A4" class="castume-button" onclick="selectAns(A4)">${shuffledAnsArry[3]}</li>
     </ol>`;
     ansList.innerHTML = myHtml;
   } else if (shuffledAnsArry.length == 2) {
@@ -83,4 +84,35 @@ function creatQ() {
     </ol>`;
     ansList.innerHTML = myHtml;
   }
+}
+
+function selectAns(ans) {
+  if (selectedAns != ans) {
+    document.getElementById("A1").classList.remove("highlight");
+    document.getElementById("A2").classList.remove("highlight");
+    document.getElementById("A3").classList.remove("highlight");
+    document.getElementById("A4").classList.remove("highlight");
+
+    document.getElementById("A1").classList.remove("castume-button-selected");
+    document.getElementById("A2").classList.remove("castume-button-selected");
+    document.getElementById("A3").classList.remove("castume-button-selected");
+    document.getElementById("A4").classList.remove("castume-button-selected");
+
+    ans.classList.add("highlight");
+    ans.classList.add("castume-button-selected");
+
+    selectedAns = ans;
+  }
+}
+
+function submit(){
+  if(selectedAns!=null){
+
+  }
+  else{
+    // חיווי שלא בחרו
+  }
+
+
+  // פה בדיקה האם זו היתה השאלה האחרונה
 }
