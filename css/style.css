@@ -169,12 +169,14 @@ h2 {
     background-color: #516d81 !important;  
     box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
     border: 1px solid #2c3a44 !important;
+    cursor: default !important;
 }
 .castume-button-disable:active{
     background-color: #516d81 !important;  
     box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
     border: 1px solid #2c3a44 !important;
     top: 0em !important;
+    cursor: default !important;
 }
 
 
@@ -228,8 +230,9 @@ h2 {
     .castume-button:hover {
         transform: scale(1.1);
     }    
-    .castume-button-disable:active{
+    .castume-button-disable:hover{
         transform: none !important;
+        cursor: default !important;
     }
 }
 
@@ -267,7 +270,7 @@ h2 {
     }
     .castume-button {        
         border: 1px solid var(--theme-secend-color-dark) !important;
-        box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);        
+        box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);      
     }
     .corectAns{        
         border: 1px solid #054705 !important;
@@ -301,11 +304,13 @@ h2 {
     .castume-button-disable{ 
         box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
         border: 1px solid #2c3a44 !important;
+        cursor: default !important;
     }
     .castume-button-disable:active{
         box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
         border: 1px solid #2c3a44 !important;
         top: 0em !important;
+        cursor: default !important;
     }
 }
 
@@ -354,11 +359,13 @@ h2 {
     .castume-button-disable{
         box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
         border: 1px solid #2c3a44 !important;
+        cursor: default !important;
     }
     .castume-button-disable:active{
         box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
         border: 1px solid #2c3a44 !important;
         top: 0em !important;
+        cursor: default !important;
     }
     
   

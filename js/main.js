@@ -1,8 +1,8 @@
 let Qnum = 0;
 let gameArry;
 let selectedAns;
-let scoreCount=0;
-let totalQnum=5;
+let scoreCount = 0;
+let totalQnum = 5;
 
 function startGame() {
   // שינוי נראות של המסך
@@ -47,7 +47,9 @@ function importData() {
     .then((data) => {
       let importData = data; // מקצה את הנתונים למשתנה
       //   console.log(importData); // מציג את הנתונים בקונסולה
-      let startNum = Math.floor(Math.random() * (importData.length - totalQnum));
+      let startNum = Math.floor(
+        Math.random() * (importData.length - totalQnum)
+      );
       gameArry = importData.slice(startNum, startNum + totalQnum); // מחתך חמש שאלות מהמערך
       //   console.log(gameArry); // מציג את השאלות בקונסולה
       creatQ();
@@ -56,7 +58,7 @@ function importData() {
 
 function creatQ() {
   // הזנת השאלה
-  document.getElementById("Qustion").innerHTML = gameArry[Qnum].question;  
+  document.getElementById("Qustion").innerHTML = gameArry[Qnum].question;
 
   // יצירת מערך מסיחים
   let ansArry = gameArry[Qnum].additional_answers.split(",");
@@ -106,61 +108,58 @@ function selectAns(ans) {
     selectedAns = ans;
     // כפתור הגשה
     document.getElementById("sebmit").addEventListener("click", submit);
-    document.getElementById("sebmit").classList.remove("castume-button-disable");
+    document
+      .getElementById("sebmit")
+      .classList.remove("castume-button-disable");
   }
 }
 
 function submit() {
   if (selectedAns.innerHTML != null) {
-    // ביטול כפתור הגשה  
+    // ביטול כפתור הגשה
     document.getElementById("sebmit").classList.add("castume-button-disable");
     document.getElementById("sebmit").removeEventListener("click", submit);
 
     if (selectedAns.innerHTML === gameArry[Qnum].correct_answer) {
-      alert("תשובה נכונה")
+      alert("תשובה נכונה");
       selectedAns.classList.add("corectAns");
 
       // ספירה תשובה נכונה
       scoreCount++;
-
-    }
-    else{
-      alert("תשובה לא נכונה")
+    } else {
+      alert("תשובה לא נכונה");
       selectedAns.classList.add("worngAns");
 
-      if(document.getElementById("A1").innerHTML==gameArry[Qnum].correct_answer){
+      if (
+        document.getElementById("A1").innerHTML == gameArry[Qnum].correct_answer
+      ) {
         document.getElementById("A1").classList.add("corectAns");
-      }
-      else if(document.getElementById("A2").innerHTML==gameArry[Qnum].correct_answer){
+      } else if (
+        document.getElementById("A2").innerHTML == gameArry[Qnum].correct_answer
+      ) {
         document.getElementById("A2").classList.add("corectAns");
-      }
-      else if(document.getElementById("A3").innerHTML==gameArry[Qnum].correct_answer){
+      } else if (
+        document.getElementById("A3").innerHTML == gameArry[Qnum].correct_answer
+      ) {
         document.getElementById("A3").classList.add("corectAns");
-      }
-      else if (document.getElementById("A4").innerHTML==gameArry[Qnum].correct_answer){
+      } else if (
+        document.getElementById("A4").innerHTML == gameArry[Qnum].correct_answer
+      ) {
         document.getElementById("A4").classList.add("corectAns");
       }
-
-
-
     }
 
     Qnum++;
-    selectedAns=""; 
-    if(Qnum==gameArry.length){
+    selectedAns = "";
+    if (Qnum == gameArry.length) {
       // נגמר המשחק
       setTimeout(changeToEndScreen, 1000);
-    } 
-    else{
+    } else {
       // שאלה הבאה
       setTimeout(creatQ, 1000);
-    }    
-
-
+    }
   } else {
     // חיווי שלא בחרו
     alert("לא נבחרה תשובה");
   }
-
-  // פה בדיקה האם זו היתה השאלה האחרונה
 }
