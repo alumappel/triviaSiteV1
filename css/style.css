@@ -164,6 +164,20 @@ h2 {
 .castume-button-selected:active {   
     background-color: var(--theme-secend-color-dark) !important;
 }
+
+.castume-button-disable{
+    background-color: #516d81 !important;  
+    box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
+    border: 1px solid #2c3a44 !important;
+}
+.castume-button-disable:active{
+    background-color: #516d81 !important;  
+    box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
+    border: 1px solid #2c3a44 !important;
+    top: 0em !important;
+}
+
+
    
 
 
@@ -213,6 +227,9 @@ h2 {
 
     .castume-button:hover {
         transform: scale(1.1);
+    }    
+    .castume-button-disable:active{
+        transform: none !important;
     }
 }
 
@@ -280,6 +297,16 @@ h2 {
         margin: 0.7rem;
         font-size: 1.3rem;       
     }
+
+    .castume-button-disable{ 
+        box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
+        border: 1px solid #2c3a44 !important;
+    }
+    .castume-button-disable:active{
+        box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
+        border: 1px solid #2c3a44 !important;
+        top: 0em !important;
+    }
 }
 
 /* תיקוים למסך מחשב גדול */
@@ -322,6 +349,16 @@ h2 {
     .highlight{
         border: 1px solid #fcff46 !important;
         border-radius: 7px;
+    }
+
+    .castume-button-disable{
+        box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
+        border: 1px solid #2c3a44 !important;
+    }
+    .castume-button-disable:active{
+        box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
+        border: 1px solid #2c3a44 !important;
+        top: 0em !important;
     }
     
   
