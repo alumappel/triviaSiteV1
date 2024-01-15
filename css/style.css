@@ -214,8 +214,6 @@ h2 {
     border-radius: 7px;
 }
 
-
-
 @media all and (max-width:30em) {
     .castume-button {
         display: block;
@@ -236,6 +234,39 @@ h2 {
     }
 }
 
+
+
+
+
+
+/* מסך סיכום */
+#containerCircel {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    /* position: absolute; */
+  }
+/* 
+  #topContainer{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+  }
+
+  #elementsContinar{
+    position:fixed ; 
+    top:10%; 
+    left:25%;
+  } 
+
+  #animatioContainer{
+    z-index: 1; 
+  } */
+
+
+
+
 /* שונות */
 .logo-img {
     width: 35%;
@@ -251,7 +282,7 @@ h2 {
 
 /* תיקוים למסך מחשב קטן */
 @media only screen and (min-width: 1115px) {
-    #openScreen , #qustionScreen{
+    #openScreen , #qustionScreen, #endScreen{
         width: 80%;
         margin: auto;
         font-size: 1.3rem;
@@ -316,7 +347,7 @@ h2 {
 
 /* תיקוים למסך מחשב גדול */
 @media only screen and (min-width: 1920px) {
-    #openScreen , #qustionScreen{
+    #openScreen , #qustionScreen, #endScreen{
         width: 60%;
         margin: auto;
         font-size: 1.3rem;

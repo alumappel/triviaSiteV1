@@ -1,5 +1,6 @@
 let Qnum = 0;
 let gameArry;
+let shuffledAnsArry;
 let selectedAns;
 let scoreCount = 0;
 let totalQnum = 5;
@@ -35,6 +36,7 @@ function changeToEndScreen() {
   // שינוי נראות של המסך
   Qscreen.classList.add("d-none");
   Endscreen.classList.remove("d-none");
+  showCircel();
 }
 
 function startOver() {
@@ -64,7 +66,7 @@ function creatQ() {
   let ansArry = gameArry[Qnum].additional_answers.split(",");
   ansArry.push((innerHTML = gameArry[Qnum].correct_answer));
   //   console.log(ansArry);
-  let shuffledAnsArry = ansArry
+  shuffledAnsArry = ansArry
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
@@ -83,8 +85,8 @@ function creatQ() {
     ansList.innerHTML = myHtml;
   } else if (shuffledAnsArry.length == 2) {
     const myHtml = ` <ol >
-    <li class="castume-button ">${shuffledAnsArry[0]}</li>
-    <li class="castume-button ">${shuffledAnsArry[1]}</li>
+    <li  id="A1" class="castume-button " onclick="selectAns(A1)">${shuffledAnsArry[0]}</li>
+    <li  id="A2" class="castume-button "  onclick="selectAns(A2)">${shuffledAnsArry[1]}</li>
     </ol>`;
     ansList.innerHTML = myHtml;
   }
@@ -92,16 +94,26 @@ function creatQ() {
 
 function selectAns(ans) {
   if (selectedAns != ans) {
-    document.getElementById("A1").classList.remove("highlight");
-    document.getElementById("A2").classList.remove("highlight");
-    document.getElementById("A3").classList.remove("highlight");
-    document.getElementById("A4").classList.remove("highlight");
+    if (shuffledAnsArry.length == 4) {
+      document.getElementById("A1").classList.remove("highlight");
+      document.getElementById("A2").classList.remove("highlight");
+      document.getElementById("A3").classList.remove("highlight");
+      document.getElementById("A4").classList.remove("highlight");
+  
+      document.getElementById("A1").classList.remove("castume-button-selected");
+      document.getElementById("A2").classList.remove("castume-button-selected");
+      document.getElementById("A3").classList.remove("castume-button-selected");
+      document.getElementById("A4").classList.remove("castume-button-selected");
 
-    document.getElementById("A1").classList.remove("castume-button-selected");
-    document.getElementById("A2").classList.remove("castume-button-selected");
-    document.getElementById("A3").classList.remove("castume-button-selected");
-    document.getElementById("A4").classList.remove("castume-button-selected");
+    }
+    else if (shuffledAnsArry.length == 2) {
+      document.getElementById("A1").classList.remove("highlight");
+      document.getElementById("A2").classList.remove("highlight");
 
+      document.getElementById("A1").classList.remove("castume-button-selected");
+      document.getElementById("A2").classList.remove("castume-button-selected");
+    }
+   
     ans.classList.add("highlight");
     ans.classList.add("castume-button-selected");
 
@@ -162,4 +174,40 @@ function submit() {
     // חיווי שלא בחרו
     alert("לא נבחרה תשובה");
   }
+}
+
+
+function showCircel(){
+  var bar = new ProgressBar.Circle(containerCircel, {
+    color: '#fe9b4a',
+    // This has to be the same size as the maximum width to
+    // prevent clipping
+    strokeWidth: 4,
+    trailWidth: 1,
+    easing: 'easeInOut',
+    duration: 1400,
+    text: {
+      autoStyleContainer: false
+    },
+    from: { color: '#bd5e10', width: 1 },
+    to: { color: '#065994', width: 4.5 },
+    // Set default step function for all animate calls
+    step: function(state, circle) {
+      circle.path.setAttribute('stroke', state.color);
+      circle.path.setAttribute('stroke-width', state.width);
+  
+      var value = Math.round(circle.value()*totalQnum );
+      if (value === 0) {
+        circle.setText('');
+      } else {
+        circle.setText(value  +"/"+totalQnum);
+      }
+  
+    }
+  });
+  bar.text.style.fontFamily = 'Assistant', 'sans-serif';;
+  bar.text.style.fontSize = '2rem';
+  bar.text.style.color='#000';
+  
+  bar.animate(scoreCount/totalQnum);
 }
