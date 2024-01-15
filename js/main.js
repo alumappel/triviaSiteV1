@@ -133,13 +133,20 @@ function submit() {
     document.getElementById("sebmit").removeEventListener("click", submit);
 
     if (selectedAns.innerHTML === gameArry[Qnum].correct_answer) {
-      alert("תשובה נכונה");
+      // alert("תשובה נכונה");
       selectedAns.classList.add("corectAns");
+      
+      confetti({
+        particleCount: 250,
+        spread: 100,
+        origin: { y: 0 },
+      });
 
       // ספירה תשובה נכונה
       scoreCount++;
+
     } else {
-      alert("תשובה לא נכונה");
+      // alert("תשובה לא נכונה");
       selectedAns.classList.add("worngAns");
 
       if (
@@ -159,6 +166,9 @@ function submit() {
       ) {
         document.getElementById("A4").classList.add("corectAns");
       }
+
+
+
     }
 
     Qnum++;
@@ -168,7 +178,7 @@ function submit() {
       setTimeout(changeToEndScreen, 1000);
     } else {
       // שאלה הבאה
-      setTimeout(creatQ, 1000);
+      setTimeout(creatQ, 2000);
     }
   } else {
     // חיווי שלא בחרו
@@ -211,3 +221,4 @@ function showCircel(){
   
   bar.animate(scoreCount/totalQnum);
 }
+
