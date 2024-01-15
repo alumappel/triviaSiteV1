@@ -2,9 +2,9 @@
     direction: rtl;
     --text-dark: #000;
     --text-light: #fff;
-    --theme-main-color: #b8d3d8;
-    --theme-main-color-dark: #879c9f;
-    --theme-main-color-light: #cfeff4;
+    --theme-main-color: #fd7e14;
+    --theme-main-color-dark: #bd5e10;
+    --theme-main-color-light: #fe9b4a;
     --theme-secend-color: #017bd0;
     --theme-secend-color-dark: #065994;
     --theme-secend-color-light: #2097eb;
@@ -121,8 +121,8 @@ h2 {
     box-sizing: border-box;
     text-decoration: none;
     font-family: var(--font-famlily);
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 1.3rem;
     color: var(--text-light) !important;
     letter-spacing: 0.2em;
     background-color: var(--theme-secend-color) !important;
@@ -183,25 +183,106 @@ h2 {
    
 
 
+/* חיווי מענה */
+.corectAns{
+    background-color: #076a07 !important;
+    border: 1px solid #054705 !important;
+}
+
+.corectAns:active {    
+    background-color: #076a07 !important;
+    border: 1px solid #054705 !important;
+}
+
+.worngAns{
+    background-color: #bd120a !important;
+    border: 1px solid #870e07 !important;
+}
+
+.worngAns:active {    
+    background-color: #bd120a !important;
+    border: 1px solid #870e07 !important;
+}
+
+.highlight{
+    border: 1px solid #fcff46 !important;
+    border-radius: 7px;
+}
+
+.highlight:active{
+    border: 1px solid #fcff46;
+    border-radius: 7px;
+}
+
+@media all and (max-width:30em) {
+    .castume-button {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .castume-button {
+        transition: transform .2s;
+    }
+
+    .castume-button:hover {
+        transform: scale(1.1);
+    }    
+    .castume-button-disable:hover{
+        transform: none !important;
+        cursor: default !important;
+    }
+}
+
+
+
+
+
+
+/* מסך סיכום */
+#containerCircel {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    /* position: absolute; */
+  }
+/* 
+  #topContainer{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+  }
+
+  #elementsContinar{
+    position:fixed ; 
+    top:10%; 
+    left:25%;
+  } 
+
+  #animatioContainer{
+    z-index: 1; 
+  } */
+
 
 
 
 /* שונות */
 .logo-img {
-    width: 70%;
+    width: 35%;
     height: auto;
-    /* background-color: var(--theme-secend-color); */
+    background-color: var(--theme-secend-color);
     padding: 0.5rem;
-    /* border-radius: 50%;
-    margin-bottom: 0.5rem; */
-    /* box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17); */
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
 }
 
 
 
 /* תיקוים למסך מחשב קטן */
 @media only screen and (min-width: 1115px) {
-    #openScreen {
+    #openScreen , #qustionScreen, #endScreen{
         width: 80%;
         margin: auto;
         font-size: 1.3rem;
@@ -222,7 +303,16 @@ h2 {
         border: 1px solid var(--theme-secend-color-dark) !important;
         box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);      
     }
-    
+    .corectAns{        
+        border: 1px solid #054705 !important;
+    }
+    .worngAns{
+        border: 1px solid #870e07 !important;
+    }
+    .highlight{
+        border:  #fcff46 !important;
+        border-radius: 7px;
+    }
 
     .footer {        
         padding: 0.2rem;        
@@ -233,6 +323,14 @@ h2 {
         margin-top: 1rem;
     }
 
+    #qustionScreen{
+        margin-top: 2rem;
+    }
+
+    #qustionScreen ol li {
+        margin: 0.7rem;
+        font-size: 1.3rem;       
+    }
 
     .castume-button-disable{ 
         box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
@@ -249,7 +347,7 @@ h2 {
 
 /* תיקוים למסך מחשב גדול */
 @media only screen and (min-width: 1920px) {
-    #openScreen {
+    #openScreen , #qustionScreen, #endScreen{
         width: 60%;
         margin: auto;
         font-size: 1.3rem;
@@ -270,12 +368,25 @@ h2 {
 
     }
 
-    
+    #qustionScreen ol li {
+        margin: 1rem;
+        font-size: 1.5rem;       
+    }
     .castume-button {        
         border: 1px solid var(--theme-secend-color-dark) !important;
         box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);        
     }
-    
+    .corectAns{        
+        border: 1px solid #054705 !important;
+    }
+    .worngAns{
+        border: 1px solid #870e07 !important;
+    }
+    .highlight{
+        border: 1px solid #fcff46 !important;
+        border-radius: 7px;
+    }
+
     .castume-button-disable{
         box-shadow: iinset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
         border: 1px solid #2c3a44 !important;

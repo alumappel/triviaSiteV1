@@ -44,7 +44,7 @@ function startOver() {
 }
 
 function importData() {
-  fetch("js/Data.json") // הכתובת של הקובץ המקומי
+  fetch("js/DataPKAR.json") // הכתובת של הקובץ המקומי
     .then((response) => response.json()) // מנתח את התגובה ל-JSON
     .then((data) => {
       let importData = data; // מקצה את הנתונים למשתנה

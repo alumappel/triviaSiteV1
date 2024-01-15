@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>טריוויה צהלית - פיקוד העורף</title>
+    <title>IDF Interactive</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/logo.png" />
     <!-- Font Awesome icons (free version)-->
@@ -22,104 +22,38 @@
     <link href="css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <!-- קובץ JS  -->
-    <script src="js/main.js"></script>
-    <script src="js/progressbar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    
 </head>
 
 
 <body id="page-top" class=" overflow-hidden m-auto">
-    <!-- Masthead-->
-    <header id="header" class="masthead bg-primary text-white text-center d-none ">
-        <div class="row  d-flex  align-items-center justify-content-around">
-            <div class="col-2 icons">
-                <img src="assets/logo.png" style="height: 30px; width: auto;">
-            </div>
-            <div class="col-8">
-                <p class="lead mb-0">
-                    טריוויה צהלית - פיקוד העורף
-                </p>
-            </div>
-            <div class="col-2 icons" onclick="startOver()">
-                <i class="bi bi-house-fill" alt="חזרה לעמוד הבית" style="font-size: 1.5rem;"></i>
-            </div>
-        </div>
-    </header>
-
+    
     <!-- מסך פתיחה-->
-    <section id="openScreen" style="margin-top: 1rem;" class="">
+    <section id="openScreen" style="margin-top: 10rem;" class="">
         <section class="row d-flex align-items-center justify-content-center">
-            <img src="assets/logo.png" class="col col-12 logo-img">
-            <h1 class="col col-12">טריוויה צהלית - פיקוד העורף</h1>
+            <img src="assets/IDFUnteractiveLogo.svg" class="col col-12 logo-img" alt="logo">
+            <!-- <h1 class="col col-12">טריוויה צהלית - פיקוד העורף</h1> -->
 
         </section>
         <!-- חלק טקסט והנחייה -->
-        <section class="text-center" style=" padding:1rem ; padding-top: 0;">
+        <!-- <section class="text-center" style=" padding:1rem ; padding-top: 0;">
             <p>פה יהיה טקסט פתיחה - אם בשלב הסקיצה העיצובית עדיין לא קיים הטקסט הרלוונטי, לא מומלץ למקם טקסט אמיתי אחר.
                 הסיבה היא, כי בעת הצגת סקיצה עם טקסט אמיתי קריא, יתחיל האוטת הטקסט, וצגת </p>
             </br>
 
             <p>פה תהייה הנחייה לפעילות - לוחצים על הכפתור שמתחת, מקבלים לורם איפסום טרי ורענן, מעתיקים</p>
 
-        </section>
+        </section> -->
         <!-- חלק כפתור -->
-        <section>
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn  btn-lg  castume-button " type="button" onclick="startGame()">קדימה!</button>
+        <section  style="margin-top: 5rem;">
+            <div class="d-grid gap-2 col-lg-6 col-10  mx-auto">
+                <a class="btn  btn-lg  castume-button " type="button" href="Home_Front_Command_Trivia.html" >טריווית פיקוד העורף</a>
             </div>
 
         </section>
     </section>
 
 
-
-    <!-- מסך שאלה -->
-    <section id="qustionScreen" class="d-none">
-        <section>
-            <h2 id="Qustion">פה תהייה השאלה - ואולי קצת יותר ארוכה ועוד טיפה ועוד קצת , טוב הגזמנו?</h2>
-        </section>
-        <section id="AnsList">
-            <ol>
-                <li id="A1" class="castume-button corectAns" onclick="selectAns(A1)">מסיח 1</li>
-                <li id="A2" class="castume-button highlight" onclick="selectAns(A2)">מסיח 2 גם זה אחד ארוך ארוך ארוך
-                    ארוך ארוך ארוך</li>
-                <li id="A3" class="castume-button worngAns" onclick="selectAns(A3)">מסיח 3</li>
-                <li id="A4" class="castume-button" onclick="selectAns(A4)">מסיח 4 זה אחד ארוך ארוך ארוך ארוך ארוך טוב
-                    דיי מוגזם</li>
-            </ol>
-        </section>
-        <section>
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button id="sebmit" class="btn  btn-lg  castume-button castume-button-disable "
-                    type="button">בדיקה</button>
-            </div>
-
-        </section>
-    </section>
-
-    <!-- מסך סיכום -->
-    <section id="endScreen" class="d-none">
-        <section  style=" width: 200px;height: 200px; margin: auto;align-self: center;">
-            <svg    height=" 200px" width=" 200px" style="position:fixed;  left:calc(50% - 100px);">
-                <circle cx="50%" cy="50%" r="50%" stroke="none" stroke-width="0" fill="#a1d3f7"  />
-            </svg>
-            <div id="containerCircel"  style=" position:fixed;left:calc(50% - 100px)"></div>
-        </section>
-        <section id="mainText" class="text-center" style=" padding:1rem ; padding-top: 0;">
-            <p>פה טקסט מסכם יחסית ארוך -
-                </br>
-                קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה
-                שיצמה ברורק. הועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף. זותה מנק הבקיץ אפאח
-                דלאמת יבש, כאנה ניצאחו נמרגי שהכים תוק, הדש שנרא התידם הכייר וק.
-            </p>
-        </section>
-        <section>
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn  btn-lg  castume-button " type="button" onclick="">צפו בסרטון</button>
-            </div>
-
-        </section>
-    </section>
 
 
     <!-- Footer-->
@@ -127,7 +61,7 @@
         <div class="container ">
             <div class="row ">
                 <p class="lead mb-0" style="font-size: 0.7rem;">
-                    טריווית פיקוד העורף 2024 פותח ע"י IDF-Interactive
+                     פותח ע"י IDF-Interactive
                 </p>
             </div>
         </div>
