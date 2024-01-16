@@ -3,7 +3,7 @@ let gameArry;
 let shuffledAnsArry;
 let selectedAns;
 let scoreCount = 0;
-let totalQnum = 5;
+let totalQnum = 20;
 
 function startGame() {
   // שינוי נראות של המסך
@@ -44,7 +44,7 @@ function startOver() {
 }
 
 function importData() {
-  fetch("js/DataPKAR.json") // הכתובת של הקובץ המקומי
+  fetch("data/DataPKAR.json") // הכתובת של הקובץ המקומי
     .then((response) => response.json()) // מנתח את התגובה ל-JSON
     .then((data) => {
       let importData = data; // מקצה את הנתונים למשתנה
