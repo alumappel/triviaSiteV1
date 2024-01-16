@@ -4,6 +4,7 @@ let shuffledAnsArry;
 let selectedAns;
 let scoreCount = 0;
 let totalQnum = 20;
+let canChoose=true;
 
 function startGame() {
   // שינוי נראות של המסך
@@ -59,6 +60,7 @@ function importData() {
 }
 
 function creatQ() {
+  canChoose=true;
   // הזנת השאלה
   document.getElementById("Qustion").innerHTML = gameArry[Qnum].question;
 
@@ -93,7 +95,7 @@ function creatQ() {
 }
 
 function selectAns(ans) {
-  if (selectedAns != ans) {
+  if (selectedAns != ans && canChoose) {
     if (shuffledAnsArry.length == 4) {
       document.getElementById("A1").classList.remove("highlight");
       document.getElementById("A2").classList.remove("highlight");
@@ -178,6 +180,7 @@ function submit() {
       setTimeout(changeToEndScreen, 1000);
     } else {
       // שאלה הבאה
+      canChoose=false;
       setTimeout(creatQ, 2000);
     }
   } else {
