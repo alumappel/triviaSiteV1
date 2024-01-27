@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth < 281)
   {
     alert("דיס איז אוקוורד\nלצערנו אתר זה עדיין אינו מתאים את עצמו לכל הצורות המסך שלך...\nבבקשה פתח.י את הקפל וסובב.י את התצוגה.");
-  } else {
-    // אם המכשיר אינו גלאקסי פולד, לא תוצג הודעת ה-alert
-  }
+  } 
 });
 
 function startGame() {
@@ -60,6 +58,9 @@ function importData() {
     .then((response) => response.json()) // מנתח את התגובה ל-JSON
     .then((data) => {
       let importData = data; // מקצה את הנתונים למשתנה
+      importData= importData.map((value) => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
       //   console.log(importData); // מציג את הנתונים בקונסולה
       let startNum = Math.floor(
         Math.random() * (importData.length - totalQnum)
