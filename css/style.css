@@ -199,8 +199,16 @@ h2 {
 
 
 
+
 /* תיקוים למסך מחשב קטן */
-@media only screen and (min-width: 1115px) {
+@media (min-hight:569px) {
+    body{
+        background-color: #065994 !important;
+    }
+    .logo-img{
+        display: none !important;
+    }
+    
     #openScreen {
         width: 80%;
         margin: auto;
@@ -230,7 +238,7 @@ h2 {
     
     }
     section {
-        margin-top: 1rem;
+        margin-top: 0.3rem;
     }
 
 

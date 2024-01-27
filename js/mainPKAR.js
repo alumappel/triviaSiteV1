@@ -4,7 +4,18 @@ let shuffledAnsArry;
 let selectedAns;
 let scoreCount = 0;
 let totalQnum = 20;
-let canChoose=true;
+let canChoose = true;
+
+document.addEventListener("DOMContentLoaded", function () {
+  // בדיקה אם המכשיר הוא גלאקסי פולד
+  // if (navigator.userAgent.includes("Galaxy Fold"))
+  if (window.innerWidth < 281)
+  {
+    alert("דיס איז אוקוורד\nלצערנו אתר זה עדיין אינו מתאים את עצמו לכל הצורות המסך שלך...\nבבקשה פתח.י את הקפל וסובב.י את התצוגה.");
+  } else {
+    // אם המכשיר אינו גלאקסי פולד, לא תוצג הודעת ה-alert
+  }
+});
 
 function startGame() {
   // שינוי נראות של המסך
@@ -60,7 +71,7 @@ function importData() {
 }
 
 function creatQ() {
-  canChoose=true;
+  canChoose = true;
   // הזנת השאלה
   document.getElementById("Qustion").innerHTML = gameArry[Qnum].question;
 
@@ -101,21 +112,19 @@ function selectAns(ans) {
       document.getElementById("A2").classList.remove("highlight");
       document.getElementById("A3").classList.remove("highlight");
       document.getElementById("A4").classList.remove("highlight");
-  
+
       document.getElementById("A1").classList.remove("castume-button-selected");
       document.getElementById("A2").classList.remove("castume-button-selected");
       document.getElementById("A3").classList.remove("castume-button-selected");
       document.getElementById("A4").classList.remove("castume-button-selected");
-
-    }
-    else if (shuffledAnsArry.length == 2) {
+    } else if (shuffledAnsArry.length == 2) {
       document.getElementById("A1").classList.remove("highlight");
       document.getElementById("A2").classList.remove("highlight");
 
       document.getElementById("A1").classList.remove("castume-button-selected");
       document.getElementById("A2").classList.remove("castume-button-selected");
     }
-   
+
     ans.classList.add("highlight");
     ans.classList.add("castume-button-selected");
 
@@ -137,7 +146,7 @@ function submit() {
     if (selectedAns.innerHTML === gameArry[Qnum].correct_answer) {
       // alert("תשובה נכונה");
       selectedAns.classList.add("corectAns");
-      
+
       confetti({
         particleCount: 250,
         spread: 100,
@@ -146,7 +155,6 @@ function submit() {
 
       // ספירה תשובה נכונה
       scoreCount++;
-
     } else {
       // alert("תשובה לא נכונה");
       selectedAns.classList.add("worngAns");
@@ -168,9 +176,6 @@ function submit() {
       ) {
         document.getElementById("A4").classList.add("corectAns");
       }
-
-
-
     }
 
     Qnum++;
@@ -180,7 +185,7 @@ function submit() {
       setTimeout(changeToEndScreen, 1000);
     } else {
       // שאלה הבאה
-      canChoose=false;
+      canChoose = false;
       setTimeout(creatQ, 2000);
     }
   } else {
@@ -189,39 +194,36 @@ function submit() {
   }
 }
 
-
-function showCircel(){
+function showCircel() {
   var bar = new ProgressBar.Circle(containerCircel, {
-    color: '#fe9b4a',
+    color: "#fe9b4a",
     // This has to be the same size as the maximum width to
     // prevent clipping
     strokeWidth: 4,
     trailWidth: 1,
-    easing: 'easeInOut',
+    easing: "easeInOut",
     duration: 1400,
     text: {
-      autoStyleContainer: false
+      autoStyleContainer: false,
     },
-    from: { color: '#bd5e10', width: 1 },
-    to: { color: '#065994', width: 4.5 },
+    from: { color: "#bd5e10", width: 1 },
+    to: { color: "#065994", width: 4.5 },
     // Set default step function for all animate calls
-    step: function(state, circle) {
-      circle.path.setAttribute('stroke', state.color);
-      circle.path.setAttribute('stroke-width', state.width);
-  
-      var value = Math.round(circle.value()*totalQnum );
-      if (value === 0) {
-        circle.setText('');
-      } else {
-        circle.setText(value  +"/"+totalQnum);
-      }
-  
-    }
-  });
-  bar.text.style.fontFamily = 'Assistant', 'sans-serif';;
-  bar.text.style.fontSize = '2rem';
-  bar.text.style.color='#000';
-  
-  bar.animate(scoreCount/totalQnum);
-}
+    step: function (state, circle) {
+      circle.path.setAttribute("stroke", state.color);
+      circle.path.setAttribute("stroke-width", state.width);
 
+      var value = Math.round(circle.value() * totalQnum);
+      if (value === 0) {
+        circle.setText("");
+      } else {
+        circle.setText(value + "/" + totalQnum);
+      }
+    },
+  });
+  (bar.text.style.fontFamily = "Assistant"), "sans-serif";
+  bar.text.style.fontSize = "2rem";
+  bar.text.style.color = "#000";
+
+  bar.animate(scoreCount / totalQnum);
+}
