@@ -77,8 +77,8 @@ function creatQ() {
   document.getElementById("Qustion").innerHTML = gameArry[Qnum].question;
 
   // יצירת מערך מסיחים
-  let ansArry = gameArry[Qnum].additional_answers.split(",");
-  ansArry.push((innerHTML = gameArry[Qnum].correct_answer));
+  let ansArry = gameArry[Qnum].Additionalanswers.split(";");
+  ansArry.push((innerHTML = gameArry[Qnum].correctanswer));
   //   console.log(ansArry);
   shuffledAnsArry = ansArry
     .map((value) => ({ value, sort: Math.random() }))
@@ -144,7 +144,7 @@ function submit() {
     document.getElementById("sebmit").classList.add("castume-button-disable");
     document.getElementById("sebmit").removeEventListener("click", submit);
 
-    if (selectedAns.innerHTML === gameArry[Qnum].correct_answer) {
+    if (selectedAns.innerHTML === gameArry[Qnum].correctanswer) {
       // alert("תשובה נכונה");
       selectedAns.classList.add("corectAns");
 
@@ -161,19 +161,19 @@ function submit() {
       selectedAns.classList.add("worngAns");
 
       if (
-        document.getElementById("A1").innerHTML == gameArry[Qnum].correct_answer
+        document.getElementById("A1").innerHTML == gameArry[Qnum].correctanswer
       ) {
         document.getElementById("A1").classList.add("corectAns");
       } else if (
-        document.getElementById("A2").innerHTML == gameArry[Qnum].correct_answer
+        document.getElementById("A2").innerHTML == gameArry[Qnum].correctanswer
       ) {
         document.getElementById("A2").classList.add("corectAns");
       } else if (
-        document.getElementById("A3").innerHTML == gameArry[Qnum].correct_answer
+        document.getElementById("A3").innerHTML == gameArry[Qnum].correctanswer
       ) {
         document.getElementById("A3").classList.add("corectAns");
       } else if (
-        document.getElementById("A4").innerHTML == gameArry[Qnum].correct_answer
+        document.getElementById("A4").innerHTML == gameArry[Qnum].correctanswer
       ) {
         document.getElementById("A4").classList.add("corectAns");
       }
