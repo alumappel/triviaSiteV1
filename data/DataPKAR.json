@@ -52,35 +52,35 @@
         "ID": 8,
         "timestemp": "2/16/2024 11:23:16",
         "question": "באיזו שנה הוקם מחוז צפון תחת פיקוד העורף?",
-        "correctanswer": 1999,
+        "correctanswer": "1999",
         "Additionalanswers": "2000;2003;1995"
     },
     {
         "ID": 9,
         "timestemp": "2/16/2024 11:23:55",
         "question": "באיזו שנה הוקם מחוז דן?",
-        "correctanswer": 1992,
+        "correctanswer": "1992",
         "Additionalanswers": "1950;1999;1991"
     },
     {
         "ID": 10,
         "timestemp": "2/16/2024 11:24:37",
         "question": "באיזו שנה הוקם מחוז ירושלים והמרכז המוכר לנו כיום?",
-        "correctanswer": 2016,
+        "correctanswer": "2016",
         "Additionalanswers": "1992;1999;2000"
     },
     {
         "ID": 11,
         "timestemp": "2/16/2024 11:25:09",
         "question": "באיזו שנה הוקם מחוז דרום תחת פיקוד העורף?",
-        "correctanswer": 1998,
+        "correctanswer": "1998",
         "Additionalanswers": "1999;1992;2001"
     },
     {
         "ID": 12,
         "timestemp": "2/16/2024 11:26:09",
         "question": "באיזו שנה הוקמה היחצ\"א?",
-        "correctanswer": 1984,
+        "correctanswer": "1984",
         "Additionalanswers": "1948;1992;1990"
     },
     {
@@ -94,7 +94,7 @@
         "ID": 14,
         "timestemp": "2/16/2024 11:42:04",
         "question": "מה מספר המוקד הטלפוני של פיקוד העורף?",
-        "correctanswer": 104,
+        "correctanswer": "104",
         "Additionalanswers": "אין מספר;101;100"
     },
     {
@@ -150,7 +150,7 @@
         "ID": 22,
         "timestemp": "2/16/2024 11:57:33",
         "question": "באיזו שנה הוקם אתר ההנצחה ברמלה?",
-        "correctanswer": 2004,
+        "correctanswer": "2004",
         "Additionalanswers": "1992;2000;2005"
     },
     {
@@ -388,7 +388,7 @@
         "ID": 56,
         "timestemp": "2/16/2024 12:27:37",
         "question": "באיזו שנה שונה שמו של מחנה רמלה ל'מחנה רחבעם'?",
-        "correctanswer": 2003,
+        "correctanswer": "2003",
         "Additionalanswers": "2004;2000;1999"
     },
     {
@@ -423,7 +423,7 @@
         "ID": 61,
         "timestemp": "2/16/2024 12:31:58",
         "question": "באיזו שנה הועבר 'חוק הג\"א' בכנסת?",
-        "correctanswer": 1951,
+        "correctanswer": "1951",
         "Additionalanswers": "1999;1992;2000"
     },
     {
@@ -472,7 +472,7 @@
         "ID": 68,
         "timestemp": "2/16/2024 12:38:20",
         "question": "מתי הוקמה 'מפקדת אלון'?",
-        "correctanswer": 2020,
+        "correctanswer": "2020",
         "Additionalanswers": "2021;1990;2022"
     },
     {
@@ -570,7 +570,7 @@
         "ID": 82,
         "timestemp": "2/16/2024 12:47:57",
         "question": "מתי עברה החטיבה לבסיסה כיום ברמלה? ",
-        "correctanswer": 2021,
+        "correctanswer": "2021",
         "Additionalanswers": "2000;2003;2016"
     },
     {
