@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>טריוויה צהלית - אוגדת יהודה ושומרון</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/JSDlogo.png" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="css/styleJSD.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- קובץ JS  -->
+    <script src="js/mainJSD.js"></script>
+    <script src="js/progressbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+</head>
+
+
+<body id="page-top" class=" overflow-hidden m-auto container " style="--bs-gutter-x: none;">
+    <!-- Masthead-->
+    <header id="header" class="masthead text-white text-center d-none ">
+        <div class="row  d-flex  align-items-center justify-content-around">
+            <div class="col-2 icons">
+                <img src="assets/JSDlogo.png" style="height: 35px; width: auto;">
+            </div>
+            <div class="col-8">
+                <p class="lead mb-0">
+                    טריוויה צהלית - אוגדת יהודה ושומרון
+                </p>
+            </div>
+            <div class="col-2 icons" onclick="startOver()">
+                <i class="bi bi-house-fill" alt="חזרה לעמוד הבית" style="font-size: 1.5rem;"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- מסך פתיחה-->
+    <section id="openScreen" style="margin-top: 1rem;" class="container ">
+        <section class="row d-flex align-items-center justify-content-center">
+            <img src="assets/JSDlogo.png" class="col col-12 logo-img">
+            <h1 class="col col-12">טריוויה צהלית - אוגדת יהודה ושומרון</h1>
+
+        </section>
+        <!-- חלק טקסט והנחייה -->
+        <section class="text-center" style=" padding:1rem ; padding-top: 0; margin-top: 1rem;">
+            <p>טקסט דוגמה מסך פתיחה
+                </br>
+                קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי הועניב היושבב שערש שמחויט - שלושע ותלברו חשלו
+                שעותלשך וחאית נובש ערששף. </br>
+                מוזמנים להתמודד לבד או יחד עם השאלות ולהעמיק את הידע במורשת האוגדה.
+                </br>
+                </br>
+                <strong>
+                    שימו לב
+                </strong>
+                </br>
+                כשלחצתם על מקש בדיקה – שלחתם את התשובה
+                </br>
+                אז רגע לפני בדקו את תשובתכם.
+                </br>
+                </br>
+                <strong>
+                    צוות חינוך אוגדת יהודה ושומרון מאחל לכם הצלחה.
+                </strong>
+            </p>
+
+        </section>
+        <!-- חלק כפתור -->
+        <section style="margin-top: 0;">
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn  btn-lg  castume-button " type="button" onclick="startGame()">קדימה!</button>
+            </div>
+
+        </section>
+    </section>
+
+
+
+    <!-- מסך שאלה -->
+    <section id="qustionScreen" class="d-none">
+        <section>
+            <h2 id="Qustion">רק רגע - טוענים...</h2>
+        </section>
+        <section id="AnsList">
+            <!-- <ol>
+                <li id="A1" class="castume-button corectAns" onclick="selectAns(A1)">מסיח 1</li>
+                <li id="A2" class="castume-button highlight" onclick="selectAns(A2)">מסיח 2 גם זה אחד ארוך ארוך ארוך
+                    ארוך ארוך ארוך</li>
+                <li id="A3" class="castume-button worngAns" onclick="selectAns(A3)">מסיח 3</li>
+                <li id="A4" class="castume-button" onclick="selectAns(A4)">מסיח 4 זה אחד ארוך ארוך ארוך ארוך ארוך טוב
+                    דיי מוגזם</li>
+            </ol> -->
+        </section>
+        <section>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button id="sebmit" class="btn  btn-lg  castume-button castume-button-disable "
+                    type="button">בדיקה</button>
+            </div>
+
+        </section>
+    </section>
+
+    <!-- מסך סיכום -->
+    <section id="endScreen" class="d-none">
+        <section style=" width: 200px;height: 200px; margin: auto;align-self: center;">
+            <svg height=" 200px" width=" 200px" style="position:fixed;  left:calc(50% - 100px);">
+                <circle cx="50%" cy="50%" r="50%" stroke="none" stroke-width="0" fill="#a1d3f7" />
+            </svg>
+            <div id="containerCircel" style=" position:fixed;left:calc(50% - 100px)"></div>
+        </section>
+        <section id="mainText" class="text-center" style=" padding:1rem ; padding-top: 0;">
+            <p><strong>
+                    כל הכבוד!
+                </strong></br>
+                סיימתם את המשימה וכנראה שהידע שלכם על אוגדת יהודה ושומרון גדול בהרבה.
+                </br>
+                אנחנו מזמינים אתכם  ל..... פה חסר טקסט סיום....
+            </p>
+        </section>
+        <section style="margin-top: 0;">
+            <div class="d-grid gap-2 col-8 col-md-6 mx-auto" style="margin-bottom: 0.3rem;">
+                <a class="btn  btn-lg  castume-button " style=" font-size: 90%;"
+                    href="" target="_blank">כפתור לדוגמה</a>
+            </div>
+            <div class="d-grid gap-2 col-8 col-md-6 mx-auto">
+                <a class="btn  btn-lg  castume-button " style=" font-size: 90%;"
+                    href="" target="_blank">כפתור לדוגמה</a>
+            </div>
+
+        </section>
+    </section>
+
+
+    <!-- Footer-->
+    <div class="footer text-center align-items-center justify-content-center">
+        <div class="container ">
+            <div class="row ">
+                <p class="lead mb-0" style="font-size: 0.7rem;">
+                    טריווית אוגדת יהודה ושומרון 2024 פותח ע"י IDF-Interactive
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <!-- <script src="js/scripts.js"></script> -->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+</body>
+
+</html>
