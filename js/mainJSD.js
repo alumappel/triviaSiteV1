@@ -97,7 +97,15 @@ function creatQ() {
     <li id="A4" class="castume-button" onclick="selectAns(A4)">${shuffledAnsArry[3]}</li>
     </ol>`;
     ansList.innerHTML = myHtml;
-  } else if (shuffledAnsArry.length == 2) {
+  } else if (shuffledAnsArry.length == 3) {
+    const myHtml = ` <ol >
+    <li  id="A1" class="castume-button " onclick="selectAns(A1)">${shuffledAnsArry[0]}</li>
+    <li  id="A2" class="castume-button "  onclick="selectAns(A2)">${shuffledAnsArry[1]}</li>
+    <li  id="A3" class="castume-button "  onclick="selectAns(A3)">${shuffledAnsArry[2]}</li>
+    </ol>`;
+    ansList.innerHTML = myHtml;
+  }
+  else if (shuffledAnsArry.length == 2) {
     const myHtml = ` <ol >
     <li  id="A1" class="castume-button " onclick="selectAns(A1)">${shuffledAnsArry[0]}</li>
     <li  id="A2" class="castume-button "  onclick="selectAns(A2)">${shuffledAnsArry[1]}</li>
@@ -118,7 +126,16 @@ function selectAns(ans) {
       document.getElementById("A2").classList.remove("castume-button-selected");
       document.getElementById("A3").classList.remove("castume-button-selected");
       document.getElementById("A4").classList.remove("castume-button-selected");
-    } else if (shuffledAnsArry.length == 2) {
+    } else if (shuffledAnsArry.length == 3) {
+      document.getElementById("A1").classList.remove("highlight");
+      document.getElementById("A2").classList.remove("highlight");
+      document.getElementById("A3").classList.remove("highlight");
+
+      document.getElementById("A1").classList.remove("castume-button-selected");
+      document.getElementById("A2").classList.remove("castume-button-selected");
+      document.getElementById("A3").classList.remove("castume-button-selected");
+    }
+    else if (shuffledAnsArry.length == 2) {
       document.getElementById("A1").classList.remove("highlight");
       document.getElementById("A2").classList.remove("highlight");
 
