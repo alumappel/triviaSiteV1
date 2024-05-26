@@ -1,5 +1,5 @@
 let Qnum = 0;
-let gameArry;
+let gameArry=[];
 let shuffledAnsArry;
 let selectedAns;
 let scoreCount = 0;
@@ -58,15 +58,31 @@ function importData() {
     .then((response) => response.json()) // מנתח את התגובה ל-JSON
     .then((data) => {
       let importData = data; // מקצה את הנתונים למשתנה
-      importData= importData.map((value) => ({ value, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(({ value }) => value);
-      //   console.log(importData); // מציג את הנתונים בקונסולה
-      let startNum = Math.floor(
-        Math.random() * (importData.length - totalQnum)
-      );
-      gameArry = importData.slice(startNum, startNum + totalQnum); // מחתך חמש שאלות מהמערך
-      //   console.log(gameArry); // מציג את השאלות בקונסולה
+      // לולאה לכל קטוגוריה
+      // בוחר שאלה רנדומלית מתוך הקטגוריה
+      // מוסיף את השאלה לגייםאריי
+      importData.forEach(category => {
+        let questions = category.questions;
+        let numQuestions = category.Qnum;
+        
+        for (let i = 0; i < numQuestions; i++) {
+            if (questions.length > 0) {
+                // Get a random index
+                let randomIndex = Math.floor(Math.random() * questions.length);
+                
+                // Push the random question to the gameArry
+                gameArry.push(questions[randomIndex]);
+                
+                // Remove the selected question from the array to avoid duplicates
+                questions.splice(randomIndex, 1);
+            }
+        }
+    });
+
+      
+       console.log(gameArry); // מציג את השאלות בקונסולה
+
+
       creatQ();
     });
 }
