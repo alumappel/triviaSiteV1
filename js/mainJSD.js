@@ -1,5 +1,5 @@
 let Qnum = 0;
-let gameArry=[];
+let gameArry = [];
 let shuffledAnsArry;
 let selectedAns;
 let scoreCount = 0;
@@ -9,10 +9,11 @@ let canChoose = true;
 document.addEventListener("DOMContentLoaded", function () {
   // בדיקה אם המכשיר הוא גלאקסי פולד
   // if (navigator.userAgent.includes("Galaxy Fold"))
-  if (window.innerWidth < 281)
-  {
-    alert("דיס איז אוקוורד\nלצערנו אתר זה עדיין אינו מתאים את עצמו לכל הצורות המסך שלך...\nבבקשה פתח.י את הקפל וסובב.י את התצוגה.");
-  } 
+  if (window.innerWidth < 281) {
+    alert(
+      "דיס איז אוקוורד\nלצערנו אתר זה עדיין אינו מתאים את עצמו לכל הצורות המסך שלך...\nבבקשה פתח.י את הקפל וסובב.י את התצוגה."
+    );
+  }
 });
 
 function startGame() {
@@ -61,27 +62,25 @@ function importData() {
       // לולאה לכל קטוגוריה
       // בוחר שאלה רנדומלית מתוך הקטגוריה
       // מוסיף את השאלה לגייםאריי
-      importData.forEach(category => {
+      importData.forEach((category) => {
         let questions = category.questions;
         let numQuestions = category.Qnum;
-        
+
         for (let i = 0; i < numQuestions; i++) {
-            if (questions.length > 0) {
-                // Get a random index
-                let randomIndex = Math.floor(Math.random() * questions.length);
-                
-                // Push the random question to the gameArry
-                gameArry.push(questions[randomIndex]);
-                
-                // Remove the selected question from the array to avoid duplicates
-                questions.splice(randomIndex, 1);
-            }
+          if (questions.length > 0) {
+            // Get a random index
+            let randomIndex = Math.floor(Math.random() * questions.length);
+
+            // Push the random question to the gameArry
+            gameArry.push(questions[randomIndex]);
+
+            // Remove the selected question from the array to avoid duplicates
+            questions.splice(randomIndex, 1);
+          }
         }
-    });
+      });
 
-      
-       console.log(gameArry); // מציג את השאלות בקונסולה
-
+      //  console.log(gameArry); // מציג את השאלות בקונסולה
 
       creatQ();
     });
@@ -120,8 +119,7 @@ function creatQ() {
     <li  id="A3" class="castume-button "  onclick="selectAns(A3)">${shuffledAnsArry[2]}</li>
     </ol>`;
     ansList.innerHTML = myHtml;
-  }
-  else if (shuffledAnsArry.length == 2) {
+  } else if (shuffledAnsArry.length == 2) {
     const myHtml = ` <ol >
     <li  id="A1" class="castume-button " onclick="selectAns(A1)">${shuffledAnsArry[0]}</li>
     <li  id="A2" class="castume-button "  onclick="selectAns(A2)">${shuffledAnsArry[1]}</li>
@@ -150,8 +148,7 @@ function selectAns(ans) {
       document.getElementById("A1").classList.remove("castume-button-selected");
       document.getElementById("A2").classList.remove("castume-button-selected");
       document.getElementById("A3").classList.remove("castume-button-selected");
-    }
-    else if (shuffledAnsArry.length == 2) {
+    } else if (shuffledAnsArry.length == 2) {
       document.getElementById("A1").classList.remove("highlight");
       document.getElementById("A2").classList.remove("highlight");
 
