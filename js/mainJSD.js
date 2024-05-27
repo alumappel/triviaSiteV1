@@ -46,6 +46,7 @@ function changeToEndScreen() {
   const Endscreen = document.getElementById("endScreen");
   // שינוי נראות של המסך
   Qscreen.classList.add("d-none");
+  document.getElementById("progress-bar-div").classList.add("d-none");
   Endscreen.classList.remove("d-none");
   showCircel();
 }
@@ -210,6 +211,7 @@ function submit() {
     }
 
     Qnum++;
+    updateProgressBar();
     selectedAns = "";
     if (Qnum == gameArry.length) {
       // נגמר המשחק
@@ -224,6 +226,15 @@ function submit() {
     alert("לא נבחרה תשובה");
   }
 }
+
+
+function updateProgressBar() {
+  const progressBar = document.getElementById("progress-bar");
+  const progress = (Qnum / totalQnum) * 100;
+  progressBar.style.width = `${progress}%`;
+  progressBar.setAttribute("aria-valuenow", progress);
+}
+
 
 function showCircel() {
   var bar = new ProgressBar.Circle(containerCircel, {
