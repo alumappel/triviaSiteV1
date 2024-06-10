@@ -90,7 +90,7 @@ h2 {
 }
 
 .progress-bar{
-background-color: var(--theme-secend-color-light);
+background-color: var(--text-dark);
 }
 
 #qustionScreen{
