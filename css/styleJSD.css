@@ -347,6 +347,61 @@ background-color: var(--text-dark);
         top: 0em !important;
         cursor: default !important;
     }
+     #qustionScreen,
+  #endScreen {
+    width: 80%;
+    margin: auto;
+    font-size: 1.3rem;
+  }
+
+  h1,
+  h2 {
+    font-size: 3rem;
+  }
+
+  .castume-button {
+    border: 1px solid var(--theme-secend-color-dark) !important;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  }
+
+  .corectAns {
+    border: 1px solid #054705 !important;
+  }
+
+  .worngAns {
+    border: 1px solid #870e07 !important;
+  }
+
+  .highlight {
+    border: 1px solid #fcff46 !important;
+    border-radius: 7px;
+  }
+
+  .footer {
+    padding: 0.2rem;
+    font-size: 0.1rem;
+  }
+
+  section {
+    margin-top: 1rem;
+  }
+
+  #qustionScreen {
+    margin-top: 2rem;
+  }
+
+  #qustionScreen ol li {
+    margin: 0.7rem;
+    font-size: 1.3rem;
+  }
+
+  .castume-button-disable,
+  .castume-button-disable:active {
+    box-shadow: inset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
+    border: 1px solid #2c3a44 !important;
+    cursor: default !important;
+    top: 0em !important;
+  }
 }
 
 /* תיקוים למסך מחשב גדול */
@@ -402,7 +457,52 @@ background-color: var(--text-dark);
         top: 0em !important;
         cursor: default !important;
     }
-    
+    #qustionScreen,
+  #endScreen {
+    width: 60%;
+    margin: auto;
+    font-size: 1.3rem;
+  }
+
+  section {
+    margin-top: 2rem;
+  }
+
+  h1,
+  h2 {
+    font-size: 2rem;
+  }
+
+  #qustionScreen ol li {
+    margin: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .castume-button {
+    border: 1px solid var(--theme-secend-color-dark) !important;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  }
+
+  .corectAns {
+    border: 1px solid #054705 !important;
+  }
+
+  .worngAns {
+    border: 1px solid #870e07 !important;
+  }
+
+  .highlight {
+    border: 1px solid #fcff46 !important;
+    border-radius: 7px;
+  }
+
+  .castume-button-disable,
+  .castume-button-disable:active {
+    box-shadow: inset 0 -0.6em 0 -0.55em rgba(0, 0, 0, 0.17);
+    border: 1px solid #2c3a44 !important;
+    cursor: default !important;
+    top: 0em !important;
+  }
   
 }
 
