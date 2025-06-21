@@ -7,6 +7,14 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>טריוויה צהלית - מבצע עם כלביא</title>
+
+    <!-- עבור שיתוף -->
+<meta property="og:title" content="טריוויה צהלית: מבצע עם כלביא - בואו לבדוק את הידע שלכם!" />
+    <meta property="og:description" content="חושבים שאתם מומחים? שחקו בטריוויה 'מבצע עם כלביא' וגלו כמה אתם באמת יודעים!" />
+    <meta property="og:image" content="https://idf-interactive.com/assets/IIWlogoWhite.png" />
+    <meta property="og:url" content="https://idf-interactive.com/Home_Iran_Israel_war.html" />
+    <meta property="og:type" content="website" />
+
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/IIWlogo.png" />
     <!-- Font Awesome icons (free version)-->
@@ -51,7 +59,7 @@
     </header>
 
     <!-- מסך פתיחה-->
-    <section id="openScreen" style="margin-top: 1rem;" class="container ">
+    <section id="openScreen" style="margin-top: 1rem;" class="container d-none">
         <section class="row d-flex align-items-center justify-content-center">
             <img src="assets/IIWlogoWhite.png" class="col col-12 logo-img">
             <h1 class="col col-12">מבצע "עם כלביא"</h1>
@@ -116,13 +124,24 @@
     </section>
 
     <!-- מסך סיכום -->
-    <section id="endScreen" class="d-none">
-        <section style=" width: 200px;height: 200px; margin: auto;align-self: center;">
+    <section id="endScreen" class="">
+        <section style=" width: 200px;height: 200px; margin: auto;align-self: center;padding-top: 0.5rem;">
             <svg height=" 200px" width=" 200px" style="position:fixed;  left:calc(50% - 100px);">
                 <circle cx="50%" cy="50%" r="50%" stroke="none" stroke-width="0" fill="#a1d3f7" />
             </svg>
             <div id="containerCircel" style=" position:fixed;left:calc(50% - 100px)"></div>
         </section>
+         <section id="share-btn" >
+              <!-- כפתור שיתוף -->
+             <div class="text-center mt-3">
+  <button id="shareBtn" class="btn castume-button castume-button-round" onclick="handleShare()" title="שתפו עם חברים">
+    <i class="bi bi-share-fill"></i>
+  </button>
+</div>
+         </section>
+       
+                      
+       
         <section id="mainText" class="text-center" style=" padding:1rem ; padding-top: 0;">
             <p><strong>
                     כל הכבוד!

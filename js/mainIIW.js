@@ -55,37 +55,68 @@ function startOver() {
   window.location.reload();
 }
 
+
+
 function importData() {
-  fetch("data/DataJSD.json") // הכתובת של הקובץ המקומי
-    .then((response) => response.json()) // מנתח את התגובה ל-JSON
+  const mainCategoryName = "מורשת צבאית"; // Name of the primary category to prioritize
+  fetch("data/DataJSD.json") // Load questions from local JSON file
+    .then((response) => response.json())
     .then((data) => {
-      let importData = data; // מקצה את הנתונים למשתנה
-      // לולאה לכל קטוגוריה
-      // בוחר שאלה רנדומלית מתוך הקטגוריה
-      // מוסיף את השאלה לגייםאריי
-      importData.forEach((category) => {
-        let questions = category.questions;
-        let numQuestions = category.Qnum;
+      gameArry = []; // Final array of selected questions restarts empty
+      const mainCategoryTarget = Math.floor(totalQnum * 0.5); // 50% of total questions should come from main category
+      let mainCategoryActual = 0; // Actual number taken from main category
 
-        for (let i = 0; i < numQuestions; i++) {
-          if (questions.length > 0) {
-            // Get a random index
-            let randomIndex = Math.floor(Math.random() * questions.length);
+      // Find the main category in the data
+      const mainCategory = data.find(cat => cat.category?.trim() === mainCategoryName);
 
-            // Push the random question to the gameArry
-            gameArry.push(questions[randomIndex]);
+      if (mainCategory) {
+        let questions = [...mainCategory.questions]; // Clone to avoid modifying original
+        let available = Math.min(questions.length, mainCategoryTarget); // Take only as many as available
 
-            // Remove the selected question from the array to avoid duplicates
-            questions.splice(randomIndex, 1);
-          }
+        // Randomly select questions from main category
+        for (let i = 0; i < available; i++) {
+          let randomIndex = Math.floor(Math.random() * questions.length);
+          gameArry.push(questions[randomIndex]);
+          questions.splice(randomIndex, 1); // Prevent duplicates
+        }
+
+        mainCategoryActual = available;
+      }
+
+      // Determine how many questions are left to select from other categories
+      const remainingToFill = totalQnum - mainCategoryActual;
+
+      // Filter out the main category
+      const otherCategories = data.filter(cat => cat.category?.trim() !== mainCategoryName);
+
+      const questionsPerCategory = Math.floor(remainingToFill / otherCategories.length);
+      let remainder = remainingToFill % otherCategories.length; // Distribute leftover questions
+
+      // Loop through other categories and randomly select questions
+      otherCategories.forEach(category => {
+        let questions = [...category.questions];
+        let numToSelect = questionsPerCategory + (remainder > 0 ? 1 : 0);
+        if (remainder > 0) remainder--;
+
+        for (let i = 0; i < numToSelect && questions.length > 0; i++) {
+          let randomIndex = Math.floor(Math.random() * questions.length);
+          gameArry.push(questions[randomIndex]);
+          questions.splice(randomIndex, 1); // Avoid duplicates
         }
       });
 
-      //  console.log(gameArry); // מציג את השאלות בקונסולה
+      // After all questions have been added to gameArry
+      gameArry = gameArry
+        .map((q) => ({ q, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ q }) => q);
 
-      creatQ();
+      creatQ(); // Begin game logic
     });
 }
+
+
+
 
 function creatQ() {
   canChoose = true;
@@ -269,3 +300,27 @@ function showCircel() {
 
   bar.animate(scoreCount / totalQnum);
 }
+
+// פונקצייה לשיתוף
+function handleShare() {
+  const scorePercent = Math.round((scoreCount / totalQnum) * 100); // אחוזי הצלחה
+
+  const text = `ניסיתם את הטריוויה של מבצע "עם כלביא"?
+אני הגעתי ל-${scorePercent}%, נראה אתכם!
+https://alumappel.github.io/triviaSiteV1/Home_Iran_Israel_war.html`;
+
+  if (navigator.share) {
+    navigator.share({
+      title: "בואו לשחק בטריוויה!",
+      text: text,
+      // אין צורך ב-url נפרד, הוא כבר כלול בטקסט
+    })
+      .then(() => console.log("Shared successfully"))
+      .catch((error) => console.error("שגיאה בשיתוף:", error));
+  } else {
+    alert("שיתוף לא נתמך בדפדפן זה. העתקו והדביקו ידנית:");
+    console.log(text);
+  }
+}
+
+
