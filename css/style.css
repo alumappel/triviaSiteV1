@@ -2,12 +2,12 @@
     direction: rtl;
     --text-dark: #000;
     --text-light: #fff;
-    --theme-main-color: #b8d3d8;
-    --theme-main-color-dark: #879c9f;
-    --theme-main-color-light: #cfeff4;
-    --theme-secend-color: #017bd0;
-    --theme-secend-color-dark: #065994;
-    --theme-secend-color-light: #2097eb;
+    --theme-main-color: #fff;
+    --theme-main-color-dark: #36454F;
+    --theme-main-color-light: #fff;
+    --theme-secend-color: #1f5286;
+    --theme-secend-color-dark: #133353;
+    --theme-secend-color-light: #8BC34A;
     --font-famlily: 'Assistant', sans-serif;
 }
 
