@@ -307,7 +307,7 @@ function handleShare() {
 
   const text = `ניסיתם את הטריוויה של מבצע "עם כלביא"?
 אני הגעתי ל-${scorePercent}%, נראה אתכם!
-https://alumappel.github.io/triviaSiteV1/Home_Iran_Israel_war.html`;
+https://idf-interactive.com/Home_Iran_Israel_war.html`;
 
   if (navigator.share) {
     navigator.share({
