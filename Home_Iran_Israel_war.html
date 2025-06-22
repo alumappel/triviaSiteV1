@@ -9,8 +9,9 @@
     <title>טריוויה צהלית - מבצע עם כלביא</title>
 
     <!-- עבור שיתוף -->
-<meta property="og:title" content="טריוויה צהלית: מבצע עם כלביא - בואו לבדוק את הידע שלכם!" />
-    <meta property="og:description" content="חושבים שאתם מומחים? שחקו בטריוויה 'מבצע עם כלביא' וגלו כמה אתם באמת יודעים!" />
+    <meta property="og:title" content="טריוויה צהלית: מבצע עם כלביא - בואו לבדוק את הידע שלכם!" />
+    <meta property="og:description"
+        content="חושבים שאתם מומחים? שחקו בטריוויה 'מבצע עם כלביא' וגלו כמה אתם באמת יודעים!" />
     <meta property="og:image" content="https://idf-interactive.com/assets/IIWlogoWhite.png" />
     <meta property="og:url" content="https://idf-interactive.com/Home_Iran_Israel_war.html" />
     <meta property="og:type" content="website" />
@@ -53,13 +54,14 @@
             </div>
         </div>
         <!-- Progress bar container -->
-    <div id="progress-bar-div" class="progress" style="height: 10px; margin-top: 10px;border-radius: 0.25em">
-        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
+        <div id="progress-bar-div" class="progress" style="height: 10px; margin-top: 10px;border-radius: 0.25em">
+            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
     </header>
 
     <!-- מסך פתיחה-->
-    <section id="openScreen" style="margin-top: 1rem;" class="container ">
+    <section id="openScreen" style="margin-top: 1rem;" class="container">
         <section class="row d-flex align-items-center justify-content-center">
             <img src="assets/IIWlogoWhite.png" class="col col-12 logo-img">
             <h1 class="col col-12">מבצע "עם כלביא"</h1>
@@ -67,23 +69,18 @@
         </section>
         <!-- חלק טקסט והנחייה -->
         <section class="text-center " style=" padding:1rem ; padding-top: 0; margin-top: 1rem;">
-            <p>ברוכים הבאים ל.....!
-                </br>
-                בדיוק כמו ששום דבר לא בא במקרה, וכמו שהיו אלו שנים רבות שנדרשו להכנת דפי האינטרנט, המון גרסאות קפצו בבת אחת. מולן, העבודה שנעשית כיום היא עבודה רבה של שנים, וזה כולל את השינוי של דפי האינטרנט.
-                </br>
-                חיזוק הקשר בין המשימה העכשווית לגיאוגרפיה, להיסטוריה ולהתיישבות יחזקו את הנכונות, העוצמה והדיוק בעמידה
-                במשימה- הגנה על הגזרה, על תושבי ועל ביטחון מדינת ישראל.
-                </br>        
+            <p>ברוכים הבאים לטריוויה - "עם כלביא".</br>
+                כאן לא רק בודקים ידע – מחזקים זהות.</br>
+                לא רק עונים על שאלות – מחברים את העבר, ההווה והעתיד של כולנו .</br>
+                כי מי שנלחם בגבורה – צריך גם לדעת למה.</br>
                 <strong>
-                    שימו לב
+                    שימו לב:
                 </strong>
-                </br>
                 כשלחצתם על מקש בדיקה – שלחתם את התשובה
-                </br>
                 אז רגע לפני בדקו את תשובתכם.
                 </br>
                 <strong>
-                    מאחלים לכם הצלחה!
+                    בהצלחה, לוחמים ולוחמות.
                 </strong>
             </p>
 
@@ -91,7 +88,8 @@
         <!-- חלק כפתור -->
         <section style="margin-top: 0;">
             <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn  btn-lg  castume-button " type="button" onclick="startGame()">קדימה!</button>
+                <button class="btn  btn-lg  castume-button " type="button" onclick="startGame()">צאו לדרך -
+                    עם כלביא!</button>
             </div>
 
         </section>
@@ -101,8 +99,19 @@
 
     <!-- מסך שאלה -->
     <section id="qustionScreen" class="d-none">
-        <section>
-            <h2 id="Qustion">רק רגע - טוענים...</h2>
+        <section class="Q">
+            <div class="container question-container row align-items-center ">
+                <!-- שאלה – תוצג מימין בדסקטופ, למעלה במובייל col-md-6 -->
+                <div id="questionTextCol" class="col-12  question-text text-center text-md-end">
+                    <h2 class="mb-3" id="Qustion">רק רגע - טוענים...</h2>
+                </div>
+
+                <!-- תמונה – תוצג משמאל בדסקטופ, למטה במובייל -->
+                <div id="questionImageWrapper" class="col-12 col-md-6 question-image-wrapper text-center d-none ">
+                    <img id="questionImage" src="" alt="תמונה לשאלה" class="img-fluid question-image"
+                        onclick="openImageModal(this.src)" />
+                </div>
+            </div>
         </section>
         <section id="AnsList">
             <!-- <ol>
@@ -131,52 +140,66 @@
             </svg>
             <div id="containerCircel" style=" position:fixed;left:calc(50% - 100px)"></div>
         </section>
-         <section id="share-btn" >
-              <!-- כפתור שיתוף -->
-             <div class="text-center mt-3">
-  <button id="shareBtn" class="btn castume-button castume-button-round" onclick="handleShare()" title="שתפו עם חברים">
-    <i class="bi bi-share-fill"></i>
-  </button>
-</div>
-         </section>
-       
-                      
-       
+        <section id="share-btn">
+            <!-- כפתור שיתוף -->
+            <div class="text-center mt-3">
+                <button id="shareBtn" class="btn castume-button castume-button-round" onclick="handleShare()"
+                    title="שתפו עם חברים">
+                    <i class="bi bi-share-fill"></i>
+                </button>
+            </div>
+        </section>
+
+
+
         <section id="mainText" class="text-center" style=" padding:1rem ; padding-top: 0;">
             <p><strong>
                     כל הכבוד!
                 </strong></br>
                 סיימתם את המשימה וכנראה שהידע שלכם על ..... גדול בהרבה.
                 </br>
-                אנחנו מזמינים אתכם ל...... פנים.  
-</br> אז יאללה.. צפייה נעימה!
+                אנחנו מזמינים אתכם ל...... פנים.
+                </br> אז יאללה.. צפייה נעימה!
             </p>
         </section>
         <section style="margin-top: 0;">
             <div class="d-grid gap-2 col-8 col-md-6 mx-auto" style="margin-bottom: 0.3rem;">
-                <a class="btn  btn-lg  castume-button " style=" font-size: 90%;" href="" target="_blank">לצפייה בסרטון</a>
+                <a class="btn  btn-lg  castume-button " style=" font-size: 90%;" href="" target="_blank">לצפייה
+                    בסרטון</a>
             </div>
 
         </section>
     </section>
 
 
-    <!-- Footer-->
-    <div class="footer text-center align-items-center justify-content-center">
-        <div class="container ">
-            <div class="row ">
-                <p class="lead mb-0" style="font-size: 0.7rem;">
-                    טריווית מבצע עם כלביא 2025 פותח ע"י IDF-Interactive
-                </p>
-            </div>
+    <!-- Footer -->
+    <div class="footer text-center">
+        <div class="container d-flex justify-content-between align-items-center">
+            <img src="assets/Education and Youth CorpsLogo.png" alt="לוגו 1" class="footer-logo">
+
+            <p class="lead mb-0" style="font-size: 0.6rem;">
+                טריווית מבצע עם כלביא 2025 פותח ע"י IDF-Interactive
+            </p>
+
+            <img src="assets/IDFlogo.svg" alt="לוגו 2" class="footer-logo">
         </div>
     </div>
+
+    <!-- Modal for image zoom -->
+    <div id="imageModal" class="image-modal d-none" onclick="closeImageModal(event)">
+        <button class="close-btn" onclick="closeImageModal(event)" aria-label="סגור">&times;</button>
+        <img id="modalImage" src="" alt="תמונה מוגדלת">
+    </div>
+
+
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <!-- <script src="js/scripts.js"></script> -->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
+
+
 
 </body>
 

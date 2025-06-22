@@ -59,7 +59,7 @@ function startOver() {
 
 function importData() {
   const mainCategoryName = "מורשת צבאית"; // Name of the primary category to prioritize
-  fetch("data/DataJSD.json") // Load questions from local JSON file
+  fetch("data/DataTesting.json") // Load questions from local JSON file
     .then((response) => response.json())
     .then((data) => {
       gameArry = []; // Final array of selected questions restarts empty
@@ -120,8 +120,62 @@ function importData() {
 
 function creatQ() {
   canChoose = true;
-  // הזנת השאלה
-  document.getElementById("Qustion").innerHTML = gameArry[Qnum].question;
+
+// מציג את השאלה הנוכחית מהמערך
+let currentQuestion = gameArry[Qnum];
+
+// מציג טקסט שאלה
+document.getElementById("Qustion").textContent = currentQuestion.question;
+
+// הצגת התמונה אם קיימת
+const imgWrapper = document.getElementById("questionImageWrapper");
+const imgElement = document.getElementById("questionImage");
+const textCol = document.getElementById("questionTextCol");
+
+// אם קיימת תמונה
+if (currentQuestion.image && currentQuestion.image.trim() !== "") {
+  const imageBaseName = currentQuestion.image.trim(); // לדוגמה: "test1"
+  const imagePathBase = `assets/Qimages/${imageBaseName}`;
+  const extensions = [".webp", ".jpg", ".jpeg", ".png"];
+  let index = 0;
+
+  // פונקציית בדיקה רקע כדי לא להציג שגיאות בקונסול
+  function tryPreloadNext() {
+    if (index >= extensions.length) {
+      // לא נמצאה תמונה תקינה
+      imgElement.src = "";
+      imgWrapper.classList.add("d-none");
+      textCol.classList.remove("col-md-6");
+      textCol.classList.add("col-md-12");
+      return;
+    }
+
+    const testPath = `${imagePathBase}${extensions[index]}`;
+    const testImg = new Image();
+    testImg.onload = () => {
+      imgElement.src = testPath;
+      imgElement.alt = "תמונה לשאלה";
+      imgWrapper.classList.remove("d-none");
+      textCol.classList.remove("col-md-12");
+      textCol.classList.add("col-md-6");
+    };
+    testImg.onerror = () => {
+      index++;
+      tryPreloadNext();
+    };
+    testImg.src = testPath;
+  }
+
+  tryPreloadNext();
+} else {
+  // אם אין בכלל שדה תמונה או שהוא ריק
+  imgElement.src = "";
+  imgWrapper.classList.add("d-none");
+  textCol.classList.remove("col-md-6");
+  textCol.classList.add("col-md-12");
+}
+
+
 
   // יצירת מערך מסיחים
   let ansArry = gameArry[Qnum].Additionalanswers.split(";");
@@ -323,4 +377,24 @@ https://idf-interactive.com/Home_Iran_Israel_war.html`;
   }
 }
 
+// חלונית הגדלת תמונה
+function openImageModal(src) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  modalImg.src = src;
+  modal.classList.remove("d-none");
+}
 
+function closeImageModal(event) {
+  // Prevent closing when clicking directly on the image
+  if (event && event.target.tagName === 'IMG') return;
+
+  // Hide the modal
+  document.getElementById("imageModal").classList.add("d-none");
+}
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    closeImageModal();
+  }
+});
