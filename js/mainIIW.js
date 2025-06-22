@@ -58,8 +58,8 @@ function startOver() {
 
 
 function importData() {
-  const mainCategoryName = "מורשת צבאית"; // Name of the primary category to prioritize
-  fetch("data/DataTesting.json") // Load questions from local JSON file
+  const mainCategoryName = "מבצע עם כלביא"; // Name of the primary category to prioritize
+  fetch("data/DataIIW.json") // Load questions from local JSON file
     .then((response) => response.json())
     .then((data) => {
       gameArry = []; // Final array of selected questions restarts empty
