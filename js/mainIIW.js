@@ -398,3 +398,14 @@ document.addEventListener('keydown', function (event) {
     closeImageModal();
   }
 });
+
+// דיווח על כפתור בסיום לGA
+document.getElementById("EndBtn").addEventListener("click", function () {
+  // שליחת אירוע ל-GA
+  gtag("event", "End_button_clicked", {
+    event_category: "engagement",
+    event_label: "End Button",
+    value: 1
+  });
+});
+
